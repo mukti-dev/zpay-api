@@ -412,4 +412,4 @@ const razorpayRechargeTransactionManager = async (reqBody) => {
 
 
 
-module.exports = { getWalletData, getWalletDetail, getWalletDetail, getAllWallet, addNewTransaction, addNewWallet, updateWalletBalance, userWallet, razorpayRechargeTransactionManager, rechargeTransactionManager }
+module.exports = { getWalletData, getWalletDetail, getWalletDetail, getAllWallet, addNewTransaction, addNewWallet, updateWalletBalance, razorpayRechargeTransactionManager, rechargeTransactionManager }
