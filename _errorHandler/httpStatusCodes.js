@@ -4,7 +4,8 @@ const httpStatusCodes = {
     FORBIDDEN: 403,
     NOT_FOUND: 404,
     INTERNAL_SERVER: 500,
-    UNAUTHORIZED: 401
+    UNAUTHORIZED: 401,
+    UPGRADE_REQUIRED: 426
 }
 
 module.exports = httpStatusCodes

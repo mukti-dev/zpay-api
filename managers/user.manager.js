@@ -2,6 +2,7 @@ const { decryptText, encryptText } = require('../helper/encryptDecrypt')
 const Users = require('../models/users.models')
 const InternalServer = require('../_errorHandler/500')
 const UnauthorizedError = require('../_errorHandler/401')
+const NotFoundError = require('../_errorHandler/404')
 const { Login } = require('../models/login.models')
 const { ObjectId } = require('mongoose').Types
 
@@ -133,4 +134,17 @@ const toggleStatusManager = async (userId) => {
     }
 }
 
-module.exports = { saveUserData, userLogin, changePasswordManager, getAllUsers, checkedUser, toggleStatusManager }
+const getUserById = async (userId) => {
+    try {
+        const user = await Users.find({ _id: new ObjectId(userId) }).exec()
+        if (user.length > 0) {
+            return user[0]
+        } else {
+            throw new NotFoundError('No record found with this Id')
+        }
+    } catch (error) {
+        throw error
+    }
+}
+
+module.exports = { saveUserData, userLogin, changePasswordManager, getAllUsers, checkedUser, toggleStatusManager, getUserById }

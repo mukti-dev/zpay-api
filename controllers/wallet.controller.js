@@ -1,4 +1,4 @@
-const { getWalletData, getWalletDetail, getAllWallet, addNewTransaction, addNewWallet, updateWalletBalance, userWallet, razorpayRechargeTransactionManager } = require('../managers/wallet.manager')
+const { getWalletData, getWalletDetail, getAllWallet, addNewTransaction, addNewWallet, updateWalletBalance, rechargeTransactionManager, userWallet, razorpayRechargeTransactionManager } = require('../managers/wallet.manager')
 const { successResponse, failureResponse } = require('../services/responseGenerator')
 const razorpayConfig = require('../config/appConfig.json').RAZOR_PAY
 const zpayConfig = require('../config/appConfig.json').ZPAY
@@ -114,7 +114,8 @@ const rechargeTransaction = async (req, res) => {
         data.state = req.body.state;
         data.devSource = req.body.devSource;
 
-        const wallet = await userWallet(data)
+        // const wallet = await userWallet(data)
+        const wallet = await rechargeTransactionManager(data)
         successResponse(req, res, wallet, 'Successful')
     } catch (error) {
         failureResponse(req, res, error)

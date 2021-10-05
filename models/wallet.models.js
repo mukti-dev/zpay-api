@@ -9,15 +9,11 @@ const WalletSchema = new mongoose.Schema({
     },
     debit: {
         type: Number,
-        // required: true,
-        // minlength: 1,
-        trim: true
+        default: 0
     },
     credit: {
         type: Number,
-        // required: true,
-        // minlength: 1,
-        trim: true
+        default: 0
     },
     naration: {
         type: String,

@@ -89,4 +89,14 @@ const getallRechargeData = async () => {
     }
 }
 
-module.exports = { getRechargeData, getRechargeDetail, getRechargePendingData, gettodayRechargeData, getallRechargeData }
+const addRechargeManager = async (reqBody) => {
+    try {
+        const recharge = new Recharge(reqBody)
+        let result = await recharge.save()
+        return result
+    } catch (error) {
+        throw error
+    }
+}
+
+module.exports = { getRechargeData, getRechargeDetail, getRechargePendingData, gettodayRechargeData, getallRechargeData, addRechargeManager }
