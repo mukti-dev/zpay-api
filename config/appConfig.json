@@ -1,0 +1,14 @@
+{
+    "JWT_SECRCET": "VlicOf1L6V9vj5IrHZIJWWxfzohN7Mdh1ZlAYtwe",
+    "MPLAN": {
+        "API_KEY": "4bb24fc1c50e5c0c7ed5f6de19f8f1b2"
+    },
+    "RAZOR_PAY": {
+        "key_id": "rzp_live_varN1ELPwGlwB0",
+        "key_secret": "0bUWjebpLnUZtSEROYRxdijY"
+    },
+    "ZPAY": {
+        "tokenId": "Kc9P4KLAUxw=",
+        "userId": "help.dpay@gmail.com"
+    }
+}
